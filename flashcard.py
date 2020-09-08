@@ -1,3 +1,4 @@
+#https://linuxformat.com//tuxradarchive/content/code-project-build-flash-card-app
 import os, random
 
 count = 0
@@ -10,7 +11,7 @@ f1content = file1.readlines()
 f2content = file2.readlines()
 
 while count < 8:
-    os.system('clear')
+    # not working? os.system('clear')
 
     cardnum = random.randint(0, len(f1content)-1)
 
@@ -29,11 +30,11 @@ while count < 8:
 
     answer = input('\nYour choice: ')
 
-    if options[answer-1] == cardnum:
-        raw_input('\nCorrect! Hit enter...')
+    if options[int(answer)-1] == cardnum:
+        input('\nCorrect! Hit enter...')
         score = score + 1
     else:
-        raw_input('\nWrong! Hit enter...')
+        input('\nWrong! Hit enter...')
 
     count = count + 1
 
